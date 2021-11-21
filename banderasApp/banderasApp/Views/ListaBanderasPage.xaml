@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="banderasApp.Views.ListaBanderasPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Button Text="Consumir Web Services" x:Name="btncountries" Clicked="btncountries_Clicked"></Button>
+
+            <SearchBar x:Name="CountriesSearchBar"  
+                 TextChanged="CountriesSearchBar_TextChanged"
+                 BackgroundColor="#47F700"/>
+
+
+            <ListView x:Name="lstPaises"  HasUnevenRows="True" ItemTapped="lstPaises_ItemTapped" SeparatorVisibility="None" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell >
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="Auto"/>
+
+                                </Grid.RowDefinitions>
+
+                                <Label Grid.Row="0" Text="{Binding name.common}"
+                                       FontAttributes="Bold"/>
+
+                                <Label Grid.Row="1" Text="{Binding region}"
+                                       FontAttributes="Bold" />
+
+
+
+
+
+                                <Image Grid.Column="1" Source="{Binding flags.png}"
+                                       HeightRequest="40"
+                                       WidthRequest="50"/>
+
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="banderasApp.Views.MapPage">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <!--muestra el mapa en la Page-->
+            <maps:Map
+                      x:Name="myMapa" 
+                      MapType="Street" 
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand" 
+                      IsShowingUser="True"
+               MoveToLastRegionOnLayoutChange="False">
+                <!--<maps:Map.ItemTemplate>
+                    <DataTemplate>
+                        <maps:Pin Position="{Binding Position}"
+                              Address="{Binding name.common}"
+                              Label="{Binding region}" />
+                    </DataTemplate>
+                </maps:Map.ItemTemplate>-->
+                
+            </maps:Map>
+
+            <StackLayout IsVisible="false">
+                <!--<Label x:Name="lblatitud" Text="{Binding latlng[0]}"></Label>
+                <Label x:Name="lblongitud" Text="{Binding latlng[1]}"></Label>-->
+
+
+            </StackLayout>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
